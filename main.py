@@ -9,9 +9,12 @@ class App(ttk.Frame):
 
 if __name__ == '__main__':
     root = Tk()
+    root.title('RPS-ZUZEX')
+    root.update()
     root.geometry('600x400')
-    frm = ttk.Frame(root, padding=10)
-    frm.grid()
-    ttk.Label(frm, text="Hello World!").grid(column=0, row=0)
-    ttk.Button(frm, text="Quit", command=root.destroy).grid(column=1, row=0)
+    root["bg"] = "#383838"
+    labelText = Label(root, text='КАМЕНЬ-НОЖНИЦЫ-БУМАГА', fg='white', font=('Comic Sans MS', 20), bg='black')
+    playButton = Button(root, )
+    root.update()
+    labelText.place(relx=-0.4, rely=0.2, anchor='center')
     mainloop()
