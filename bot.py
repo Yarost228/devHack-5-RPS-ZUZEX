@@ -7,7 +7,7 @@ import cv2
 
 from random import *
 
-MODEL_PATH = "/content/drive/MyDrive/model/Neyronchikpeak.h5" # это надо поменять на директорию с нейронкой, щас оно настроено на Google Drive для работы на Google Colab
+MODEL_PATH = "/content/drive/MyDrive/model/NeyronchikBeter.h5" # это надо поменять на директорию с нейронкой, щас оно настроено на Google Drive для работы на Google Colab
 
 
 
