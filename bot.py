@@ -23,26 +23,26 @@ def process_image(image):
     return np.expand_dims(image_array, axis=0)
 
 def roll_rps(vvod, message):
-    rps = ["Камень", "Бумага", "Ножницы"]
+    rps = ["камень", "бумага", "ножницы"]
     if rps.count(vvod) != 0:
         vibor = choice(rps)
         bot.send_message(message.chat.id, "Выбор оппонента:" + vibor, parse_mode='html')
         if vibor == vvod:
             return "tie"
 
-        elif vibor == "Камень":
+        elif vibor == "камень":
             if vvod == "scissors":
                 return "you lose"
             elif vvod == "paper":
                 return "you win"
 
-        elif vibor == "Бумага":
+        elif vibor == "бумага":
             if vvod == "scissors":
                 return "you win"
             elif vvod == "rock":
                 return "you lose"
 
-        elif vibor == "Ножницы":
+        elif vibor == "ножницы":
             if vvod == "rock":
                 return "you win"
             elif vvod == "paper":
