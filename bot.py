@@ -9,6 +9,7 @@ from random import *
 
 MODEL_PATH = "/content/drive/MyDrive/model/NeyronchikBeter.h5" # это надо поменять на директорию с нейронкой, щас оно настроено на Google Drive для работы на Google Colab
 
+userdirectory = "/content/drive/MyDrive" # здесь также необходимо менять код если запуск не на колабе
 
 
 unique_labels = ["paper", "rock", "scissors"]
@@ -52,12 +53,12 @@ def roll_rps(vvod, message):
         return "unknown"
 
 def writeStats(message, statlist):
-    with open(f'/content/drive/MyDrive/users/{message.from_user.username}.json', 'w+') as file: # здесь также необходимо менять код если запуск не на колабе
+    with open(f'{userdirectory}/users/{message.from_user.username}.json', 'w+') as file:
         json.dump(statlist, file)
 
 
 def getStats(message):
-    with open(f'/content/drive/MyDrive/users/{message.from_user.username}.json', 'r') as file: # здесь также необходимо менять код если запуск не на колабе
+    with open(f'{userdirectory}/users/{message.from_user.username}.json', 'r') as file:
         return json.load(file)
 
 
@@ -114,12 +115,12 @@ def checkImage(message):
 
 @bot.message_handler(commands=['leaderboard'])
 def showLeaderboard(message):
-    directory = f"/content/drive/MyDrive/users" # здесь также необходимо менять код если запуск не на колабе
+    directory = f"{userdirectory}/users"
     leaderboard = {}
     text = ""
     files = os.listdir(directory)
     for user in files:
-        with open(f'/content/drive/MyDrive/users/{user}', 'r') as file: # здесь также необходимо менять код если запуск не на колабе
+        with open(f'{userdirectory}/users/{user}', 'r') as file:
             leaderboard[user] = json.load(file)[0]
     sortedLeaderboard = sorted(leaderboard.items(), key=lambda leader: leader[1], reverse=True)
     for user in sortedLeaderboard:
