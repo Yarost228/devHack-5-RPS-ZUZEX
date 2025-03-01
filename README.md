@@ -13,3 +13,5 @@ Telegram-бот для игры в камень-ножницы-бумага со
 - Python и библиотеки
 - Google Colab
 
+ссылка на бота: https://t.me/devHackRPSbot
+
